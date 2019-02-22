@@ -8,8 +8,13 @@ let logger = require('morgan');
 let mongoose = require("mongoose");
 let DB = require("./config/db");
 
+var uristring =
+    process.env.MONGOLAB_URI ||
+    process.env.MONGOHQ_URL ||
+    'mongodb://localhost/HelloMongoose';
+
 //pont Mongoose to DB URI
-mongoose.connect(DB.URI);
+mongoose.connect(uristring);
 
 let mongoDB = mongoose.connection;
 mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
