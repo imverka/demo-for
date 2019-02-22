@@ -1,5 +1,5 @@
 let mongoose = require('mongoose');
-mongoose.connect('mongodb://maninder:a123456@ds056288.mlab.com:56288/comp308-w2019-lesson4a');
+//mongoose.connect('mongodb://maninder:a123456@ds056288.mlab.com:56288/comp308-w2019-lesson4a');
 
 //create a model class
 
@@ -9,8 +9,8 @@ let contactSchema = mongoose.Schema({
     age: Number
 },
 {
-    collection: "first"
+    collection: "contact"
 });
 
 
-module.exports = mongoose.model('demo', contactSchema);
+module.exports = mongoose.model('testing', contactSchema);
